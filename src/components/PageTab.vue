@@ -43,19 +43,19 @@ const getImgs = async () => {
   }
 };
 
-// let interval = null;
+let interval = null;
 onMounted(async () => {
   const nextPage = currentPage.value + 1;
   // 輪播
-  // interval = setInterval(() => {
-  //   changePage(nextPage);
-  // }, 5000); //
+  interval = setInterval(() => {
+    changePage(nextPage);
+  }, 5000); //
   await getImgs();
 });
 
-// onUnmounted(() => {
-//   clearInterval(interval);
-// });
+onUnmounted(() => {
+  clearInterval(interval);
+});
 </script>
 
 <template>
